@@ -110,7 +110,6 @@ export default {
 
 <style lang="css">
 .time-picker-modal-container {
-	width:250px;
   /*position: absolute;*/
   opacity: 1;
   z-index: 2;

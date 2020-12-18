@@ -1,16 +1,18 @@
 <template>
-	<div class="time-picker-container">
+	<div class="time-picker-container" >
 		<div class="time-picker-preview" @click="toggleFocus" :class="{active:focused}" @mouseover="overElement=true" @mouseout="overElement=false">
 			<div class="preview-container">
 				{{hourString}}:{{minuteString}}
 			</div>
 		</div>
-		<outside-click-handler :on-outside-click="onClearFocus" :focused="focused">
+		<outside-click-handler :on-outside-click="onClearFocus" :focused="focused" :slot-name="slotName">
+      <template #[slotName]>
 			<time-picker-modal
-				:init-hour="hour" :init-minute="minute" slot="modal"
+				:init-hour="hour" :init-minute="minute"
 				:handle-hour-change="handleHourChange" :handle-minute-change="handleMinuteChange"
 				:handle-time-change="handleTimeChange" v-if="focused"
 			/>
+      </template>
 		</outside-click-handler>
 	</div>
 </template>
@@ -25,16 +27,19 @@ export default {
   },
   props: {
     mode: {
+      // AMかPMかを判定
       type: [String, Number],
       default: '24',
       validator: value => value == 24 || value == 12
     },
     defaultHour: {
+      // 初期設定時間
       type: [String, Number],
       default: new Date().getHours(),
       validator: value => value >= 0 && value < 24
     },
     defaultMinute: {
+      // 初期設定分
       type: [String, Number],
       default: new Date().getMinutes(),
       validator: value => value >= 0 && value < 60
@@ -58,21 +63,29 @@ export default {
     onTimeChange: {
       type: Function,
       default: () => {}
+    },
+    slotName: {
+      type:String
     }
   },
   data() {
     return {
       hour: this.defaultHour,
       minute: this.defaultMinute,
+      // pickerの表示/非表示の判定
       focused: this.defaultFocused,
-      overElement: false
+      // mouseoverを検知してスタイルを変更する
+      overElement: false,
+      slot: "slot"
     }
   },
   computed: {
     hourString() {
+      // 時間が一桁なら先頭に0を付ける+文字化する
       return this.hour < 10 ? '0' + this.hour : this.hour + ''
     },
     minuteString() {
+      // 分が一桁なら先頭に0を付ける+文字化する
       return this.minute < 10 ? '0' + this.minute : this.minute + ''
     }
   },
@@ -89,6 +102,7 @@ export default {
       this.focused = !this.focused
       this.onFocusChange && this.onFocusChange(this.focused)
     },
+    // handle...系統は全てtime-picker-modelに関数として渡されている
     handleHourChange(hour) {
       this.hour = hour
       this.onHourChange && this.onHourChange(this.hour)
@@ -111,6 +125,9 @@ export default {
         minute: this.minute
       })
     }
+  },
+  mounted(){
+    console.log(this.onTimeChange)
   }
 }
 </script>

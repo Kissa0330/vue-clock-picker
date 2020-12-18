@@ -1,7 +1,7 @@
 <template lang="pug">
 
 div(ref="childnode" class="outside-click-container" @mouseover="overModal=true" @mouseout="overModal=false")
-	slot(name="modal")
+	slot(:name="slotName")
 
 </template>
 
@@ -15,6 +15,9 @@ export default {
     focused: {
       type: Boolean,
       default: false
+    },
+    slotName:{
+      type:String
     }
   },
   data() {
@@ -30,6 +33,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.onOutsideClick);
     document.addEventListener('click', this.onOutsideClickHandler)
   },
   beforeDestroy() {

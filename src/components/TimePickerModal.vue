@@ -1,6 +1,6 @@
 <template lang="pug">
 
-div(class="time-picker-modal-container")
+div(class="time-picker-modal-container" )
 	div(class="time-picker-modal-header")
 		span(@click="handleStepChange(0)" class="time-picker-header" ':class'="{active:!step}") {{hourString}}
 		| &nbsp;:&nbsp;
@@ -37,6 +37,9 @@ export default {
     handleMinuteChange: {
       type: Function,
       default: () => {}
+    },
+    slotName:{
+      type:String
     }
   },
   data() {

@@ -1,8 +1,8 @@
-<template lang="pug">
-
-div(id="app")
-	time-picker
-
+<template>
+<div id="app">
+  <time-picker :slot-name="firstModalName" />
+  <time-picker :slot-name="secondModalName" />
+</div>
 </template>
 
 <script>
@@ -11,6 +11,12 @@ export default {
   components: {
     TimePicker
   },
+  data(){
+    return {
+      firstModalName:"one",
+      secondModalName:"one"
+    }
+  }
 }
 </script>
 

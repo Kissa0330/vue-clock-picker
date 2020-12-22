@@ -45,7 +45,7 @@ export default {
   position: fixed;
   opacity: 1;
   z-index: 2;
-  top: 335px;
+  top: 350px;
   left: 0;
   right: 0;
   margin: auto;

@@ -1,7 +1,7 @@
 <template>
 <div id="app">
-  <time-picker :slot-name="firstModalName" />
-  <time-picker :slot-name="firstModalName" />
+  <time-picker/>
+  <time-picker/>
 </div>
 </template>
 
@@ -10,12 +10,6 @@ import TimePicker from './components/TimePicker'
 export default {
   components: {
     TimePicker
-  },
-  data(){
-    return {
-      firstModalName:"one",
-      secondModalName:"two"
-    }
   }
 }
 </script>

@@ -46,6 +46,7 @@ export default {
   opacity: 1;
   z-index: 2;
   top: 100%;
-  left: 0;
+  left: -50%;
+  margin: auto;
 }
 </style>

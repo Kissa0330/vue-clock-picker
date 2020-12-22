@@ -63,7 +63,7 @@ export default {
   border-radius: 50%;
 }
 .picker-point.current{
-	background-color:#3498db;
+	background-color:#6AB2FA;
 	color:#fff !important;
 	transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }

@@ -140,11 +140,11 @@ export default {
   cursor: pointer;
 }
 .time-picker-modal-header .time-picker-header.active {
-  color: #3498db;
+  color: #6AB2FA;
   cursor: default;
 }
 .time-picker-modal-header .time-picker-header:hover {
-  color: #3498db;
+  color: #6AB2FA;
 }
 
 .picker-container {
@@ -161,7 +161,7 @@ export default {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #3498db;
+  background-color: #6AB2FA;
   transform: translate(-50%, -50%);
 }
 .picker-pointer {
@@ -170,7 +170,7 @@ export default {
   height: 110px;
   left: 50%;
   top: 20px;
-  background-color: #3498db;
+  background-color: #6AB2FA;
   transform-origin: center bottom;
 }
 

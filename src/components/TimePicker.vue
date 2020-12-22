@@ -74,7 +74,7 @@ export default {
     onTimeChange: {
       type: Function,
       default: () => {},
-    }
+    },
   },
   data() {
     return {
@@ -133,12 +133,14 @@ export default {
           minute: this.minute,
         });
     },
-  }
+  },
 };
 </script>
 
 <style lang="css">
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
 .time-picker-container {
+  height: 50px;
   position: relative;
 }
 
@@ -147,21 +149,23 @@ export default {
   cursor: pointer;
   height: 50px;
   width: 150px;
-  color: #343434;
+  color: #2c2c2c;
   border-radius: 2px;
   background-color: #fff;
   transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.12), 0 0 4px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.2),
+    -1.5px -1.5px 3px rgba(248, 253, 255, 0.9);
 }
 
 .time-picker-preview.active,
 .time-picker-preview:hover {
-  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.12), 0 0 8px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.2),
+    -1.5px -1.5px 3px rgba(248, 253, 255, 0.9);
 }
 
 .time-picker-preview.active {
   color: #fff;
-  background-color: #3498db;
+  background: linear-gradient(45deg, #65b2ff, #75b0f3);
 }
 
 .preview-container {

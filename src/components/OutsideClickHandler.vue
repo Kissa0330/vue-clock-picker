@@ -42,11 +42,12 @@ export default {
 .outside-click-container {
   width:300px;
   height : 405px;
-  position: absolute;
+  position: fixed;
   opacity: 1;
   z-index: 2;
-  top: 100%;
-  left: -50%;
+  top: 335px;
+  left: 0;
+  right: 0;
   margin: auto;
 }
 </style>

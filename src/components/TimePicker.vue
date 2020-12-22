@@ -148,7 +148,7 @@ export default {
   position: relative;
   cursor: pointer;
   height: 50px;
-  width: 150px;
+  width: 100px;
   color: #2c2c2c;
   border-radius: 2px;
   background-color: #fff;
@@ -176,6 +176,6 @@ export default {
   line-height: 40px;
   /*padding-left: 30px;*/
   transform: translate(-50%, -50%);
-  font-size: 2rem;
+  font-size: 22px;
 }
 </style>

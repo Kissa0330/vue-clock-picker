@@ -38,7 +38,6 @@ body {
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
-  display: flex;
 }
 
 #app a {

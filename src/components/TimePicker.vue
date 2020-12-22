@@ -12,6 +12,7 @@
     <outside-click-handler
       :on-outside-click="onClearFocus"
       :focused="focused"
+      v-if="focused"
     >
       <template #slotName>
         <time-picker-modal

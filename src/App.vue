@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <time-picker :slot-name="firstModalName" />
-  <time-picker :slot-name="secondModalName" />
+  <time-picker :slot-name="firstModalName" />
 </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   data(){
     return {
       firstModalName:"one",
-      secondModalName:"one"
+      secondModalName:"two"
     }
   }
 }
@@ -38,6 +38,7 @@ body {
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
+  display: flex;
 }
 
 #app a {
